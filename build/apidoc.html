@@ -1,0 +1,698 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/troyth/node-raspicam"
+
+    >raspicam (v0.2.13)</a>
+</h1>
+<h4>A Node.js-based controller module for the Raspberry Pi camera based on a command structure similar to Johnny-Five</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.raspicam">module raspicam</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.raspicam">
+            function <span class="apidocSignatureSpan"></span>raspicam
+            <span class="apidocSignatureSpan">( opts )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.super_">
+            function <span class="apidocSignatureSpan">raspicam.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">raspicam.</span>fn</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.raspicam.fn">module raspicam.fn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.assign">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>assign
+            <span class="apidocSignatureSpan">(object, sources)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.constrain">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>constrain
+            <span class="apidocSignatureSpan">( x, lower, upper )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.debounce">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>debounce
+            <span class="apidocSignatureSpan">(func, wait, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.extend">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>extend
+            <span class="apidocSignatureSpan">(object, sources)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.map">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>map
+            <span class="apidocSignatureSpan">( x, fromLow, fromHigh, toLow, toHigh )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.range">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>range
+            <span class="apidocSignatureSpan">( lower, upper, tick )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.scale">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>scale
+            <span class="apidocSignatureSpan">( x, fromLow, fromHigh, toLow, toHigh )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.sleep">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>sleep
+            <span class="apidocSignatureSpan">( ms )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.square">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>square
+            <span class="apidocSignatureSpan">( x )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.raspicam.fn.uid">
+            function <span class="apidocSignatureSpan">raspicam.fn.</span>uid
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.raspicam" id="apidoc.module.raspicam">module raspicam</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.raspicam" id="apidoc.element.raspicam.raspicam">
+        function <span class="apidocSignatureSpan"></span>raspicam
+        <span class="apidocSignatureSpan">( opts )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RaspiCam( opts ) {
+
+  if ( !(this instanceof RaspiCam) ) {
+    return new RaspiCam( opts );
+  }
+
+  // Ensure opts is an object
+  opts = opts || {};
+
+  if(typeof opts.mode === &#x22;undefined&#x22; || typeof opts.output === &#x22;undefined&#x22;){
+    console.log(&#x22;Error: RaspiCam: must define mode and output&#x22;);
+    return false;
+  }
+
+  // Initialize this Board instance with
+  // param specified properties.
+  this.opts = {};
+  _.assign( this.opts, opts );
+
+  // If any opts use the abbreviation, convert to
+  // the full word (eg. from opts.w to opts.width)
+  this.hashOpts( opts );
+
+  // Set up opts defaults
+  this.defaultOpts( );
+
+  // Create derivative opts
+  this.derivativeOpts( );
+
+  // If this.filepath doesn&#x27;t exist, make it
+  this.createFilepath( );
+
+  //child process
+  this.child_process = null;
+
+  //directory watcher
+  this.watcher = null;
+
+  //events.EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.super_" id="apidoc.element.raspicam.super_">
+        function <span class="apidocSignatureSpan">raspicam.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.raspicam.fn" id="apidoc.module.raspicam.fn">module raspicam.fn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.assign" id="apidoc.element.raspicam.fn.assign">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>assign
+        <span class="apidocSignatureSpan">(object, sources)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assign = function (object, sources) {
+  var index = -1,
+      length = sources.length,
+      customizer = length &#x3e; 1 ? sources[length - 1] : undefined,
+      guard = length &#x3e; 2 ? sources[2] : undefined;
+
+  customizer = (assigner.length &#x3e; 3 &#x26;&#x26; typeof customizer == &#x27;function&#x27;)
+    ? (length--, customizer)
+    : undefined;
+
+  if (guard &#x26;&#x26; isIterateeCall(sources[0], sources[1], guard)) {
+    customizer = length &#x3c; 3 ? undefined : customizer;
+    length = 1;
+  }
+  object = Object(object);
+  while (++index &#x3c; length) {
+    var source = sources[index];
+    if (source) {
+      assigner(object, source, index, customizer);
+    }
+  }
+  return object;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.constrain" id="apidoc.element.raspicam.fn.constrain">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>constrain
+        <span class="apidocSignatureSpan">( x, lower, upper )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constrain = function ( x, lower, upper ) {
+  return x &#x3c;= upper &#x26;&#x26; x &#x3e;= lower ? x :
+          (x &#x3e; upper ? upper : lower);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return ( x - fromLow ) * ( toHigh - toLow ) /
+          ( fromHigh - fromLow ) + toLow;
+};
+
+// Alias
+Fn.scale = Fn.map;
+
+// Fn.<span class="apidocCodeKeywordSpan">constrain</span>( val, lower, upper )
+//
+// Constrains a number to be within a range.
+// Based on arduino constrain()
+Fn.constrain = function( x, lower, upper ) {
+  return x &#x3c;= upper &#x26;&#x26; x &#x3e;= lower ? x :
+          (x &#x3e; upper ? upper : lower);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.debounce" id="apidoc.element.raspicam.fn.debounce">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>debounce
+        <span class="apidocSignatureSpan">(func, wait, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != &#x27;function&#x27;) {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = &#x27;maxWait&#x27; in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = &#x27;trailing&#x27; in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        result = wait - timeSinceLastCall;
+
+    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we&#x27;re at the
+    // trailing edge, the system time has gone backwards and we&#x27;re treating
+    // it as the trailing edge, or we&#x27;ve hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall &#x3e;= wait) ||
+      (timeSinceLastCall &#x3c; 0) || (maxing &#x26;&#x26; timeSinceLastInvoke &#x3e;= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing &#x26;&#x26; lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.extend" id="apidoc.element.raspicam.fn.extend">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>extend
+        <span class="apidocSignatureSpan">(object, sources)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (object, sources) {
+  var index = -1,
+      length = sources.length,
+      customizer = length &#x3e; 1 ? sources[length - 1] : undefined,
+      guard = length &#x3e; 2 ? sources[2] : undefined;
+
+  customizer = (assigner.length &#x3e; 3 &#x26;&#x26; typeof customizer == &#x27;function&#x27;)
+    ? (length--, customizer)
+    : undefined;
+
+  if (guard &#x26;&#x26; isIterateeCall(sources[0], sources[1], guard)) {
+    customizer = length &#x3c; 3 ? undefined : customizer;
+    length = 1;
+  }
+  object = Object(object);
+  while (++index &#x3c; length) {
+    var source = sources[index];
+    if (source) {
+      assigner(object, source, index, customizer);
+    }
+  }
+  return object;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.map" id="apidoc.element.raspicam.fn.map">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>map
+        <span class="apidocSignatureSpan">( x, fromLow, fromHigh, toLow, toHigh )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function ( x, fromLow, fromHigh, toLow, toHigh ) {
+  return ( x - fromLow ) * ( toHigh - toLow ) /
+          ( fromHigh - fromLow ) + toLow;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var lodash = require(&#x22;lodash&#x22;),
+    Fn = {
+      assign: lodash.assign,
+      extend: lodash.extend,
+      debounce: lodash.debounce
+    };
+
+// Fn.<span class="apidocCodeKeywordSpan">map</span>( val, fromLow, fromHigh, toLow, toHigh )
+//
+// Re-maps a number from one range to another.
+// Based on arduino map()
+Fn.map = function( x, fromLow, fromHigh, toLow, toHigh ) {
+  return ( x - fromLow ) * ( toHigh - toLow ) /
+          ( fromHigh - fromLow ) + toLow;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.range" id="apidoc.element.raspicam.fn.range">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>range
+        <span class="apidocSignatureSpan">( lower, upper, tick )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">range = function ( lower, upper, tick ) {
+
+  if ( arguments.length === 1 ) {
+    upper = lower;
+    lower = 0;
+  }
+
+  lower = lower || 0;
+  upper = upper || 0;
+  tick = tick || 1;
+
+  var len = Math.max( Math.ceil( (upper - lower) / tick ), 0 ),
+      idx = 0,
+      range = [];
+
+  while ( idx &#x3c;= len ) {
+    range[ idx++ ] = lower;
+    lower += tick;
+  }
+
+  return range;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Constrains a number to be within a range.
+// Based on arduino constrain()
+Fn.constrain = function( x, lower, upper ) {
+  return x &#x3c;= upper &#x26;&#x26; x &#x3e;= lower ? x :
+          (x &#x3e; upper ? upper : lower);
+};
+
+// Fn.<span class="apidocCodeKeywordSpan">range</span>( upper )
+// Fn.range( lower, upper )
+// Fn.range( lower, upper, tick )
+//
+// Returns a new array range
+//
+Fn.range = function( lower, upper, tick ) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.scale" id="apidoc.element.raspicam.fn.scale">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>scale
+        <span class="apidocSignatureSpan">( x, fromLow, fromHigh, toLow, toHigh )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scale = function ( x, fromLow, fromHigh, toLow, toHigh ) {
+  return ( x - fromLow ) * ( toHigh - toLow ) /
+          ( fromHigh - fromLow ) + toLow;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.sleep" id="apidoc.element.raspicam.fn.sleep">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>sleep
+        <span class="apidocSignatureSpan">( ms )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sleep = function ( ms ) {
+  var start = Date.now();
+  while ( Date.now() &#x3c; start + ms ) {}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//
+// Returns squared x
+//
+Fn.square = function( x ) {
+return x * x;
+};
+
+// Fn.<span class="apidocCodeKeywordSpan">sleep</span>( ms )
+//  delay for ms
+//
+// Returns undefined
+//
+Fn.sleep = function( ms ) {
+var start = Date.now();
+while ( Date.now() &#x3c; start + ms ) {}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.square" id="apidoc.element.raspicam.fn.square">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>square
+        <span class="apidocSignatureSpan">( x )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">square = function ( x ) {
+  return x * x;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fn.uid = function() {
+  return &#x22;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#x22;.replace(/[xy]/g, function(chr) {
+    var rnd = Math.random() * 16 | 0;
+    return (chr === &#x22;x&#x22; ? rnd : (rnd &#x26; 0x3 | 0x8)).toString(16);
+  }).toUpperCase();
+};
+
+// Fn.<span class="apidocCodeKeywordSpan">square</span>()
+//
+// Returns squared x
+//
+Fn.square = function( x ) {
+  return x * x;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.raspicam.fn.uid" id="apidoc.element.raspicam.fn.uid">
+        function <span class="apidocSignatureSpan">raspicam.fn.</span>uid
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uid = function () {
+  return &#x22;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#x22;.replace(/[xy]/g, function(chr) {
+    var rnd = Math.random() * 16 | 0;
+    return (chr === &#x22;x&#x22; ? rnd : (rnd &#x26; 0x3 | 0x8)).toString(16);
+  }).toUpperCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//
+Fn.range.prefixed = function( prefix, lower, upper, tick ) {
+return Fn.range.apply( null, [].slice.call(arguments, 1) ).map(function( val ) {
+  return prefix + val;
+});
+};
+
+// Fn.<span class="apidocCodeKeywordSpan">uid</span>()
+//
+// Returns a reasonably unique id string
+//
+Fn.uid = function() {
+return &#x22;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#x22;.replace(/[xy]/g, function(chr) {
+  var rnd = Math.random() * 16 | 0;
+  return (chr === &#x22;x&#x22; ? rnd : (rnd &#x26; 0x3 | 0x8)).toString(16);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
